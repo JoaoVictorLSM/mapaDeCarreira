@@ -1,0 +1,457 @@
+/* --------------------------------------------------
+    RESET
+-------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f3f4f6;
+    font-family: "Roboto", sans-serif;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------
+    CONTAINER GERAL
+-------------------------------------------------- */
+
+.resume-wrapper {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+}
+
+.resume-wrapper-inner {
+    max-width: 1100px;
+    background: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Fade suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.resume-body {
+    padding: 40px 45px 50px 45px;
+}
+
+/* --------------------------------------------------
+    LAYOUT DE COLUNAS (75% / 25%)
+    * Aplicação do layout de duas colunas no corpo principal *
+-------------------------------------------------- */
+
+.resume-body .row::after { /* Clearfix para garantir que o contêiner .row envolva os floats */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Definição das colunas para telas grandes (>= 992px) */
+.col-lg-9 {
+    float: left;
+    width: 75%;
+    padding-right: 15px; /* Espaçamento entre as colunas */
+}
+
+.col-lg-3 {
+    float: left;
+    width: 25%;
+    padding-left: 15px; /* Espaçamento entre as colunas */
+    
+    /* AJUSTE FINAL: Zera o padding-top para encostar no topo */
+    padding-top: 0; 
+}
+
+
+/* --------------------------------------------------
+    HEADER
+-------------------------------------------------- */
+
+.resume-header {
+    background: #811b85;
+    color: white;
+    padding-bottom: 10px;
+    height: 230px;
+}
+
+.picture {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Faz o layout da imagem e texto dentro do header funcionar com flexbox */
+.resume-header .row {
+    display: flex;
+    align-items: center;
+}
+
+/* ---- LINKS ESPECÍFICOS DO HEADER ---- */
+
+.resume-header .text-link {
+    color: #ffffff;
+    text-decoration: none;
+    
+}
+.mb-3{
+    padding-right: 20px;
+   
+}
+
+
+.resume-header .text-link:hover {
+    color: #f8baf8 ;
+    text-decoration: underline;
+}
+
+/* Estilos de ícones do Bootstrap */
+.bi-envelope, .bi-linkedin, .bi-github {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* --------------------------------------------------
+    TIPOGRAFIA
+-------------------------------------------------- */
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.50rem;
+    font-weight: 600;
+    color: #811b85;
+    /* AJUSTE MANTIDO: Remove margin-left para alinhar HR */
+    padding-left: 25px;
+    margin-bottom: 1%;
+    margin-left: 0; 
+    margin-top: 50px;
+}
+
+/* Zera a margem superior do primeiro H2 no conteúdo principal (75%)
+   para que o título se alinhe perfeitamente com o topo do .resume-body (padding-top: 40px). */
+.col-lg-9 h2:first-of-type {
+    margin-top: 0; 
+}
+
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #585658;
+}
+
+h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.title {
+    margin-left: 23px;
+    margin-bottom: 1px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* HR - CLASSE DE DESTAQUE (PRINCIPAL) */
+.hr-destaque {
+    border: none;
+    height: 2px;
+    background-color: #811b85;
+    width: 90%;
+    /* MANTIDO: O margin-left de 45px do HR principal dita o ponto de alinhamento */
+    margin: 10px 0 20px 45px; 
+}
+
+
+/* --------------------------------------------------
+    BUTTON
+-------------------------------------------------- */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ffffff;
+    color: #0f0101;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-color: #0f0101;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+    margin-top: 18px;
+    margin-left: 45px;
+    padding: 1% 2%;
+}
+
+.btn:hover {
+    background: #f0d1ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(180, 115, 240, 0.4);
+}
+
+/* --------------------------------------------------
+    SECTIONS
+-------------------------------------------------- */
+
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.summary-section p {
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.9;
+    margin: 0 45px;
+}
+
+/* --------------------------------------------------
+    TIMELINE PREMIUM (EXPERIÊNCIA / MAPA DE CARREIRA)
+-------------------------------------------------- */
+
+.resume-timeline {
+    border-left: 3px solid #8349e0;
+    padding-left: 35px;
+    position: relative;
+    list-style: none;
+    margin-left: 45px;
+}
+
+.resume-timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.resume-timeline-item::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    left: -44px;
+    top: 5px;
+    border: 5px solid #a632d4;
+    background-color: #ffffff;
+}
+
+.resume-timeline-item-desc p {
+    margin-bottom: 15px;
+}
+
+.resume-timeline-item-desc-heading {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --------------------------------------------------
+    SKILLS - BADGES
+-------------------------------------------------- */
+
+.badge {
+    background: #7d5d85;
+    padding: 5px 14px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin: 5px 6px;
+    box-shadow: 0 3px 10px rgba(180, 82, 236, 0.3);
+    transition: 0.2s;
+}
+
+.badge:hover {
+    transform: scale(1.06);
+}
+
+.list-inline {
+    display: flex ;
+    flex-wrap: wrap ;
+    margin-left: -6px;
+}
+
+.list-inline-item {
+    display: inline-block ;
+    margin: 0 ;
+    padding: 0;
+}
+
+/* --------------------------------------------------
+    SKILL BARS MODERNAS (SIDEBAR)
+-------------------------------------------------- */
+
+/* Ajustes de margem para o título da sidebar */
+#skills-title, .education-section h2 {
+    /* MANTIDO: Sem margem superior para alinhar com o topo da coluna */
+    margin-top: 0; 
+    margin-left: 0;
+    padding-left: 0; 
+    border-bottom: none;
+}
+
+/* Ajuste de margem para o HR da sidebar */
+.skills-section .hr-destaque {
+    border: none;
+    height: 2px;
+    background-color: #811b85;
+    /* MANTIDO: Força o alinhamento horizontal com o HR principal */
+    margin: 10px 0 20px 45px; 
+    width: calc(100% - 45px); 
+}
+
+.resume-skill-item {
+    margin-top: 15px;
+}
+
+.resume-skill-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: #e0e7ff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #8349e0;
+    border-radius: 4px;
+    transition: width 0.7s ease;
+}
+
+.resume-skills-cat {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* --------------------------------------------------
+    LISTAS (UL)
+-------------------------------------------------- */
+
+ul {
+    padding-left: 35px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+
+
+/* --------------------------------------------------
+    RESPONSIVIDADE
+-------------------------------------------------- */
+
+@media (max-width: 992px) {
+    /* Quebra de layout para telas menores (tablets e celulares) */
+
+    /* A coluna principal e a sidebar se tornam 100% de largura e sem float */
+    .col-lg-9,
+    .col-lg-3 {
+        width: 100% !important;
+        float: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        /* Zera o padding-top adicionado para desktop */
+        padding-top: 0 !important;
+    }
+
+    /* O layout do Header se torna coluna */
+    .resume-header {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .resume-header .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resume-header .primary-info, .resume-header .secondary-info {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .title {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .picture {
+        width: 150px;
+        height: 150px;
+        margin: 20px auto 10px auto;
+    }
+
+    .resume-timeline {
+        margin-left: 20px;
+    }
+
+    .summary-section p, .btn {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .hr-destaque {
+        margin-left: 20px;
+        width: calc(100% - 40px);
+    }
+
+    h2 {
+        margin-left: 0;
+        padding-left: 20px;
+        /* Restaura a margem superior padrão do h2 no mobile para espaçamento entre seções */
+        margin-top: 50px; 
+    }
+    
+    /* Zera o primeiro h2 da coluna principal no mobile para que comece no topo do bloco */
+    .col-lg-9 h2:first-of-type {
+        margin-top: 0;
+    }
+
+    /* Zera o primeiro h2 da sidebar no mobile para que comece no topo do bloco */
+    .col-lg-3 h2:first-of-type {
+        margin-top: 0;
+    }
+
+    .resume-body {
+        padding: 30px 20px;
+    }
+
+    /* Ajuste para o HR da Sidebar em mobile */
+    .skills-section .hr-destaque {
+        margin-left: 0;
+        width: 100%;
+    }
+}
